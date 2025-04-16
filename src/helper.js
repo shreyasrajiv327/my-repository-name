@@ -1,1 +1,27 @@
-function mergeSort(arr) { if (arr.length <= 1) return arr; const mid = Math.floor(arr.length / 2); const left = arr.slice(0, mid); const right = arr.slice(mid); return merge(mergeSort(left), mergeSort(right)); } function merge(left, right) { let result = [], leftIndex = 0, rightIndex = 0; while (leftIndex < left.length && rightIndex < right.length) { if (left[leftIndex] <= right[rightIndex]) { result.push(left[leftIndex++]); } else { result.push(right[rightIndex++]); } } return result.concat(left.slice(leftIndex), right.slice(rightIndex)); }
+// helper.js
+
+// Dummy utility to check if a number is even
+export function isEven(num) {
+  return num % 2 === 0;
+}
+
+// Dummy utility to generate a random number between min and max
+export function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Dummy utility to capitalize the first letter of a string
+export function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// Dummy utility to delay execution (simulating async behavior)
+export function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Dummy logger
+export function logMessage(message) {
+  console.log(`[Helper Log]: ${message}`);
+}
